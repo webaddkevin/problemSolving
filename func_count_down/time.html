@@ -1,0 +1,44 @@
+<!doctype html> 
+<html> 
+<head> 
+<meta charset="utf-8"/> 
+<title>JS实现倒计时(时、分，秒)</title> 
+<script language="javascript" type="text/javascript"> 
+var interval = 1000; 
+function ShowCountDown(year,month,day,divname) 
+{ 
+	var now = new Date(); 
+	var endDate = new Date(year, month-1, day); 
+	var leftTime=endDate.getTime()+79200000-now.getTime(); 
+	var leftsecond = parseInt(leftTime/1000); 
+	var day1=Math.floor(leftsecond/(60*60*24));
+	console.log(leftsecond/(60*60*24))
+	if(day1<10&&day1>=0){
+		day1 = '0'+day1
+	}
+	var hour=Math.floor((leftsecond-day1*24*60*60)/3600); 
+	if(hour<10){
+		hour = '0'+hour
+	}
+	var minute=Math.floor((leftsecond-day1*24*60*60-hour*3600)/60); 
+	if(minute<10){
+		minute= '0'+hour
+	}
+	var second=Math.floor(leftsecond-day1*24*60*60-hour*3600-minute*60); 
+	if(second<10){
+		second = '0'+hour
+	}
+	var cc = document.getElementById(divname); 
+	cc.innerHTML = year+"年"+month+"月"+day+"日还有："+day1+"天"+hour+"小时"+minute+"分"+second+"秒";
+	if(day1<0){
+		clearInterval(startTime)
+		cc.innerHTML =  year+"年"+month+"月"+day+"日还有：00天00小时00分00秒";
+	}
+} 
+var startTime = setInterval(function(){ShowCountDown(2017,10,28,'divdown1');}, interval); 
+</script> 
+</head> 
+<body> 
+<div id="divdown1"></div> 
+</body> 
+</html> 
