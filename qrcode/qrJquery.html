@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+		<div id="qrcode1"></div>
+		<div id="qrcode2"></div>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>	
+		<script src="jquery.qrcode.js"></script>
+		<script>
+			$('#qrcode1').qrcode({
+				width:230,
+				height:230,
+				correctLevel:0,
+				text:'https://dianwandashi.com',
+				render: "canvas",
+				typeNumber: -1,
+				correctLevel: 2,
+				background: "#ffffff",
+				foreground: "#000000",
+				type:2,
+				typeTwoData:{
+					fillRectColor:'#CFCFCD',
+					fillInlineColor:'#BCBCBC',
+					fillInlinePadding:20,
+					logoSrc:'1.png',
+					logoWidth:50,
+					logoHeight:50,
+					padding:50,
+					bottomContent:43,
+					txt:100000169,
+					txtWidth:200,
+					txtPadding:20,
+					txtHeight:30
+				}
+				
+			});  
+			$('#qrcode2').qrcode({
+				width:230,
+				height:230,
+				correctLevel:0,
+				text:'https://dianwandashi.com',
+				render: "canvas",
+				typeNumber: -1,
+				correctLevel: 2,
+				background: "#ffffff",
+				foreground: "#000000",
+				type:1,
+				typeOneData:{
+					fillRectColor:'#EEEEEC',
+					logoSrc:'1.png',
+					logoWidth:50,
+					logoHeight:50,
+					padding:50,
+					bottomContent:56,
+					bottomLogoSrc:'wxlogo.jpg',
+					wxlogoW:236,
+					wxlogoH:47,
+					txt:100000169,
+					txtWidth:100,
+					txtPadding:20,
+					txtHeight:30
+				}
+			})
+		</script>
+ </body>
+</html>
